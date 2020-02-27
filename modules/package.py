@@ -42,7 +42,7 @@ class Package:
       alternatives = '\"{}'.format(self.alternative_depencies[0])
 
       for i in range (1, len(self.alternative_depencies)):
-        alternatives += '\", \"{}'.format(self.alternative_depencies)
+        alternatives += '\", \"{}'.format(self.alternative_depencies[i])
 
       return '[{}\"]'.format(alternatives)
     return '[]'
