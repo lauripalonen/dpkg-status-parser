@@ -10,6 +10,7 @@ Clone project with `git clone git@github.com:lauripalonen/dpkg-status-parser.git
 
 Copy the desired status file to the root directory, or use the provided sample file (sample_status.real). 
 
+## Usage
 Run program with `python3 main.py`. This will initiate a small command line ui:
 ```
 Dpkg status data parser
@@ -28,7 +29,7 @@ As an succesfull output there will be a JSON file with items having following st
   "name": (string) name of the package,
   "description": (string) short description,
   "depencies": (int array) id's of packages that this package depends on,
-  "alternatives": (string array) names of the packages that are alternative depencies for this package,
+  "alternatives": (string array) names of alternative depencies for this package,
   "dependants": (int array) id's of packages that depend on this package
  }
   
