@@ -1,4 +1,4 @@
-from json_converter import Json_converter
+from modules.json_converter import Json_converter
 import sys
 
 print('Dpkg status data parser')

@@ -1,6 +1,6 @@
-from package import Package
-from package_library import Package_library
-from data_parser import Data_parser
+from modules.package import Package
+from modules.package_library import Package_library
+from modules.data_parser import Data_parser
 
 class Json_converter:
 
