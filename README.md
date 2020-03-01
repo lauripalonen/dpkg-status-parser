@@ -35,9 +35,8 @@ As an succesfull output there will be a JSON file with items having following st
   
 ```
 ## For further development
-Currently there's no option for overwriting an existing json-file in the root directory. This can be fixed with a user feature where user is given more options on file writing.
-
-Project runs currently un-tested. A small test library would raise reliability on output file when using other input files than the sample file.
+- Add a feature for file overwriting
+- Create tests
 
 
 
