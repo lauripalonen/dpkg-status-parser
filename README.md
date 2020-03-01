@@ -8,7 +8,7 @@ Requirement: Python3
 
 Clone project with `git clone git@github.com:lauripalonen/dpkg-status-parser.git` or extract the project [.zip](https://github.com/lauripalonen/dpkg-status-parser/archive/master.zip) file to a directory of your choice.  
 
-Copy the desired status file to the root directory, or use the provided sample file (sample_status.real). 
+Copy a desired status file to the root directory, or use the provided sample file (sample_status.real). 
 
 ## Usage
 Run program with `python3 main.py`. This will initiate a small command line ui:
