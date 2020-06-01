@@ -28,8 +28,8 @@ As an succesfull output there will be a JSON file with items having following st
   "id": (int) a unique id,
   "name": (string) name of the package,
   "description": (string) short description,
-  "depencies": (int array) id's of packages that this package depends on,
-  "alternatives": (string array) names of alternative depencies for this package,
+  "dependencies": (int array) id's of packages that this package depends on,
+  "alternatives": (string array) names of alternative dependencies for this package,
   "dependants": (int array) id's of packages that depend on this package
  }
   
