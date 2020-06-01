@@ -5,8 +5,8 @@ class Package:
     self.name = None
     self.description = None
 
-    self.main_depencies = []
-    self.alternative_depencies = []
+    self.main_dependencies = []
+    self.alternative_dependencies = []
     self.dependants = []
     pass
 
@@ -25,24 +25,24 @@ class Package:
   def get_id(self):
     return self.id
 
-  def add_depency(self, depency):
-    if not depency in self.main_depencies:
-      self.main_depencies.append(depency)
+  def add_dependency(self, dependency):
+    if not dependency in self.main_dependencies:
+      self.main_dependencies.append(dependency)
   
-  def add_alternative_depency(self, depency):
-    if not depency in self.alternative_depencies:
-      self.alternative_depencies.append(depency)
+  def add_alternative_dependency(self, dependency):
+    if not dependency in self.alternative_dependencies:
+      self.alternative_dependencies.append(dependency)
 
   def add_dependant(self, dependant):
     if not dependant in self.dependants:
       self.dependants.append(dependant)
 
   def alternatives_as_string(self):
-    if len(self.alternative_depencies) > 0:
-      alternatives = '\"{}'.format(self.alternative_depencies[0])
+    if len(self.alternative_dependencies) > 0:
+      alternatives = '\"{}'.format(self.alternative_dependencies[0])
 
-      for i in range (1, len(self.alternative_depencies)):
-        alternatives += '\", \"{}'.format(self.alternative_depencies[i])
+      for i in range (1, len(self.alternative_dependencies)):
+        alternatives += '\", \"{}'.format(self.alternative_dependencies[i])
 
       return '[{}\"]'.format(alternatives)
     return '[]'
@@ -52,9 +52,9 @@ class Package:
   def print_all(self):
     print("{}: {}".format(self.id, self.name))
     print("Description: {}".format(self.description))
-    print("Depencies: {}".format(self.main_depencies))
+    print("Dependencies: {}".format(self.main_dependencies))
     print("Dependants: {}".format(self.dependants))
 
   def package_as_json(self):
     alternatives = self.alternatives_as_string()
-    return '{{"id":{},"name":"{}","description":"{}","depencies":{}, "alternatives":{},"dependants":{}}}'.format(self.id, self.name, self.description, self.main_depencies, alternatives, self.dependants)
+    return '{{"id":{},"name":"{}","description":"{}","dependencies":{}, "alternatives":{},"dependants":{}}}'.format(self.id, self.name, self.description, self.main_dependencies, alternatives, self.dependants)

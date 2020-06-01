@@ -40,19 +40,19 @@ class Json_converter:
         package.set_description(description.strip())
 
       if line.startswith('Depends: '):
-        (title, depencies) = line.split(maxsplit=1)
-        parsed_depencies = self.parser.parse_depencies(depencies)
+        (title, dependencies) = line.split(maxsplit=1)
+        parsed_dependencies = self.parser.parse_dependencies(dependencies)
 
-        for dep in parsed_depencies:
+        for dep in parsed_dependencies:
           if self.library.find_id(dep):
             dep_id = self.library.find_id(dep)
-            package.add_depency(dep_id)
+            package.add_dependency(dep_id)
 
             dep_pkg = self.library.get_package(dep)
             dep_pkg.add_dependant(package.get_id())
 
           else:
-           package.add_alternative_depency(dep)
+           package.add_alternative_dependency(dep)
 
     input_file.close()
 
