@@ -35,9 +35,26 @@ class Json_converter:
         package = self.library.get_package(name.strip())
 
       if line.startswith('Description: '):
-        (title, description) = line.split(maxsplit=1)
-        description = description.replace("\"", "'")
-        package.set_description(description.strip())
+        (title, short_description) = line.split(maxsplit=1)
+        long_description = []
+
+        #ITERATE THROUGH LONG DESCRIPTION
+        while True:
+          new_description_line = input_file.readline()
+          if not new_description_line.startswith(' '):
+            break
+          stripped_line = new_description_line.strip()
+          if stripped_line == '.':
+            stripped_line = "\n"
+          long_description.append(stripped_line)
+
+        print('START OF LONG DESCRIPT')
+        for l in long_description:
+          print(l)
+        print('END OF LONG DESCRIPT')
+
+        short_description = short_description.replace("\"", "'")
+        package.set_description(short_description.strip())
 
       if line.startswith('Depends: '):
         (title, dependencies) = line.split(maxsplit=1)
